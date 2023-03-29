@@ -4,13 +4,13 @@ import Signup from './pages/Signup/Signup'
 import Login  from './pages/Login/Login'
 import Home from './pages/Home/Home'
 import './App.css'
-import { BrowserRouter, Route,Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route,Routes } from 'react-router-dom';
 
 
 function App() {
 
   return (
-    <BrowserRouter>
+    <Router>
     <Routes>
       <Route exact path='/' element={<Home/>}/> 
       
@@ -19,7 +19,7 @@ function App() {
         <Route path='/dashboard' element={<Dashboard/>} />
       
     </Routes>
-  </BrowserRouter>
+  </Router>
   )
 }
 
