@@ -1,0 +1,31 @@
+.Welcomeword{
+    font-family: Helvetica;
+}
+
+.Homepagepic{
+        
+       width:80%;
+       max-width:1200px;;
+
+        margin: 0 auto; /* center the div horizontally */
+        padding: 20px;
+      
+}
+
+.picture1{
+    max-width: 100%; 
+    height: auto; 
+}
+
+
+.Aboutgrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  
+  .grid-item {
+    background-color: #f0f0f0;
+    padding: 16px;
+  }
+
