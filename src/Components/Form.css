@@ -1,0 +1,39 @@
+.input{
+    padding:  5px 15px;
+    margin:10px 30px;
+    width:280px;
+    border-radius: 3px;
+    border:1px solid;
+   
+}
+
+.forminput{
+    display:flex;
+    flex-direction: column;
+
+
+
+
+
+}
+
+
+.forminput label {
+    text-align: center;
+    
+    
+
+}
+
+.inputspan{
+    font-size: 12px;
+    padding:3px;
+    color:red; 
+    display: none;  
+
+}
+
+.input:invalid~.inputspan{
+    display: block;
+}
+

@@ -1,0 +1,54 @@
+
+
+
+.Signup{
+    display:flex;
+    align-items: centre;
+    justify-content: centre;
+    max-height:100vh;
+    background: url("../../img/signuplarge.jpg");
+    background-size: cover;
+    background-position:center;
+}
+
+.signupform {
+    background-color:white;
+    padding: 0, 60px; 
+    border-radius: 10px;
+    box-sizing: border-box; /* Include padding and border in element's total width/height */
+    width: 90%; /* Reduce the width of the form to leave space for the submit button */
+    max-width: 500px; /* Set a maximum width to prevent the form from getting too wide */
+    margin: 0 auto; /* Center the form horizontally */
+    padding: 0 30px; /* Add padding to the sides to create space for the text */
+    font-size:16px;
+    
+    text-align: center; /* Center the text within the form */
+    overflow-y: scroll; /* add a vertical scrollbar */
+    
+}
+
+
+
+h1 {
+    text-align: center;
+   
+
+}
+
+.Submit1 {
+    width: auto;
+    height: 50px;
+    padding: 10px;
+    border: none;
+    border-style:groove;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 18px;
+    cursor: pointer;
+    /* margin-left: 10px; */
+    /* margin-right: 10px; */
+    margin-top: 15px;
+    margin-bottom: 30px;
+    max-width: 500px;
+   
+}
