@@ -1,7 +1,7 @@
 import React from "react";
 import Form from '../../Components/Form'
 import { useState } from "react";
-import '../Signup/Signup.css'
+import './Signup.css'
 function Signup() {
   const [values,setValues]=useState({
     Fullname:"",
@@ -19,7 +19,9 @@ function Signup() {
     type:'text',
     placeholder:'Fullname',
     errorMessage:"Please include a space between names", 
-    label:'Fullname'
+    label:'Fullname',
+    required:true,
+    pattern:"john",
 
   },
   {
@@ -28,7 +30,8 @@ function Signup() {
     type:'email',
     placeholder:'Email',
     errorMessage:'Please provide a valid email!',
-    label:'Email'
+    label:'Email',
+    required:true,
 
   },
   {
@@ -37,7 +40,8 @@ function Signup() {
     type:'text',
     placeholder:'Phone',
     errorMessage:"Please provide a valid phone number!",
-    label:'Phone'
+    label:'Phone',
+    required:true,
 
   },
   {
@@ -46,7 +50,8 @@ function Signup() {
     type:'text',
     placeholder:'Username',
     errorMessage:"Username already in use!",
-    label:'Username'
+    label:'Username',
+    required:true,
 
   },
   {
@@ -55,7 +60,8 @@ function Signup() {
     type:'password',
     placeholder:'Password',
     errorMessage:"Password must contain a number, special character and uppercase letter or letters!",
-    label:'Password'
+    label:'Password',
+    required:true,
 
   },
   {
@@ -64,7 +70,8 @@ function Signup() {
     type:'password',
     placeholder:'ConfirmPassword',
     errorMessage:"Passwords don't match",
-    label:'ConfirmPassword'
+    label:'ConfirmPassword',
+    required:true, 
 
   },
 ]
@@ -78,18 +85,18 @@ function Signup() {
 
   console.log(values)
   return (
-    <div className="Signupbackground">
+
     <div className="Signup">
         <form className="signupform" onSubmit={handleSubmit}>
              <h1>Sign-up</h1>
               {inputs.map((input)=>(
-                <Form key={input.id}{...input} value={values[input.name]} onChange={onChange}/>
+                <Form key={input.id} {...input} value={values[input.name]} onChange={onChange} />
               ))}
                 
             <button className="Submit1">Submit</button>
             </form>
     </div>
-    </div>
+   
   );
 }
 
