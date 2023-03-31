@@ -21,7 +21,7 @@ function Signup() {
     errorMessage:"Please include a space between names", 
     label:'Fullname',
     required:true,
-    pattern:"john",
+    pattern:"john", /**include regex code here  */
 
   },
   {
@@ -77,10 +77,10 @@ function Signup() {
 ]
 
   const handleSubmit=(e)=>{
-    e.preventDefault();
+    e.preventDefault(); /*stops page from refreshing*/
   }
-  const onChange=(e)=>{
-    setValues({...values,[e.target.name]:e.target.value})
+  const onChange=(e)=>{/**onChange is a function that is called everytime an input fields value changes, contains event object e which has dta about the event which has happened */
+    setValues({...values,[e.target.name]:e.target.value})/** updates the values state object with the new values from any input fields that are changed. */
   }
 
   console.log(values)
