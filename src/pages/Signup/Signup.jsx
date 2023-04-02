@@ -40,15 +40,17 @@ const Signup= () => {
       label: "Phone",
       pattern:"^0[0-9]{9}$",
       required: true,
-    },
-    {id:4,
+    }
+    ,
+    {
+      id:4,
       name: "username",
       type: "text",
       placeholder: "Username",
       errorMessage:
         "Username should have a capital letter at start and can have atmost 3 numbers in any position!",
       label: "Username",
-      pattern:"^([A-Z][a-z]*)(\\d*[a-zA-Z]?){0,3}$",
+      pattern:`^([A-Z][a-z]*)(\d*[a-zA-Z]?){0,3}$`,
       required: true,
     },
     
@@ -72,7 +74,7 @@ const Signup= () => {
       label: "Confirm Password",
       pattern: values.password,
       required: true,
-    },
+    }
   ];
 
   const handleSubmit = (e) => {
