@@ -79,7 +79,10 @@ const Signup= () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    localStorage.setItem("user", JSON.stringify(values));
+    alert("User information saved in local storage!");
   };
+  
 
   const onChange = (e) => {
     setValues({ ...values, [e.target.name]: e.target.value });
