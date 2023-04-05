@@ -1,6 +1,6 @@
 import React from 'react'
 import Dashboard from './pages/Dashboard/Dashboard'
-import Signup from './pages/Signup/Signup'
+import Signup from './pages/Signup/Signup1'
 import Login  from './pages/Login/Login'
 import Home from './pages/Home/Home'
 import './App.css'

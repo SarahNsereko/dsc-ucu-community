@@ -3,24 +3,30 @@ import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import ButtonBase from '@mui/material/ButtonBase';
 import Typography from '@mui/material/Typography';
+import { Link } from 'react-router-dom';
+
 
 const images = [
   {
     url: '/src/img/student2.jpg',
     title: 'Our students',
     width: '40%',
+    to: 'https://developers.google.com/community/gdsc/stories',
   },
   {
     url: 'src/img/pexels-nataliya-vaitkevich-7235893.jpg',
     title: 'Oppurtunities',
     width: '30%',
+    to:"https://careers.google.com/",
   },
   {
     url: '/src/img/volunteer.jpg',
     title: ' Community Impact',
     width: '30%',
+    to:"https://blog.google/outreach-initiatives/sustainability/extreme-heat-support/ ",
   },
 ];
+
 
 const ImageButton = styled(ButtonBase)(({ theme }) => ({
   position: 'relative',
@@ -90,7 +96,9 @@ export default function ButtonBases() {
   return (
     <Box sx={{ display: 'flex', flexWrap: 'wrap', minWidth: 300, width: '100%' }}>
       {images.map((image) => (
-        <ImageButton
+        <ImageButton 
+        component={Link}
+        to={image.to}
           focusRipple
           key={image.title}
           style={{

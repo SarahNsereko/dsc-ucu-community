@@ -1,6 +1,26 @@
-.Welcomeword{
-    font-family: Helvetica;
+
+
+.Welcomeword  {
+  text-align: center;
+  position: relative;
+  left: 100%;
+  animation: slideIn 1.5s ease forwards;
 }
+
+@keyframes slideIn {
+  from {
+    left: 100%;
+  }
+  to {
+    left: 0;
+  }
+}
+
+
+
+  
+
+  
 
 .Homepagepic{
         

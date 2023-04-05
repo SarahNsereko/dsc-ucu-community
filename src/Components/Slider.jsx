@@ -1,16 +1,10 @@
 import './Slider.css';
-import React, { useState } from 'react';
+
+import React, { useState, useEffect } from 'react';
 
 const Carousel = () => {
     const [activeIndex, setActiveIndex] = useState(0);
-  
-    const handlePrevClick = () => {
-      setActiveIndex(activeIndex === 0 ? 2 : activeIndex - 1);
-    };
-  
-    const handleNextClick = () => {
-      setActiveIndex(activeIndex === 2 ? 0 : activeIndex + 1);
-    };
+
   
     const slides = [
       {
@@ -26,13 +20,30 @@ const Carousel = () => {
         description: 'Google Student Developer Programs provide opportunities for students to connect with other students, mentors, and professionals in the industry. These connections can help students learn about different career paths, gain valuable advice and insights, and even secure internships or job opportunities.This community can provide you with opportunities to network, collaborate, and share ideas with others who are passionate about technology. You can learn from your peers and gain new perspectives on the industry'
       }
     ];
+
+   
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveIndex((prevIndex) => (prevIndex === 2 ? 0 : prevIndex + 1));
+    }, 10000); 
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const handlePrevClick = () => {
+    setActiveIndex((prevIndex) => (prevIndex === 0 ? 2 : prevIndex - 1));
+  };
+
+  const handleNextClick = () => {
+    setActiveIndex((prevIndex) => (prevIndex === 2 ? 0 : prevIndex + 1));
+  };
   
     return (
       <div className="slider-section">
         <div className="carousel-container">
           <div className="carousel__slide active">
-            <h2>{slides[activeIndex].title}</h2>
-            <p>{slides[activeIndex].description}</p>
+            <h2  className="slide-title" >{slides[activeIndex].title}</h2>
+            <p className="slide-description">{slides[activeIndex].description}</p>
           </div>
         </div>
         <div className="carousel-controls">
