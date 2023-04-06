@@ -3,15 +3,17 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 
 const SignIn = () => {
   const handleSubmit = (values, { setSubmitting, setErrors }) => {
-    const users = JSON.parse(localStorage.getItem('users')) || [];
+    console.log('Submitting form')
+    const users = JSON.parse(localStorage.getItem('users')) ;
 
     const user = users.find(u => u.email === values.email && u.password === values.password);
-
+console.log(user)
     if (!user) {
       setErrors({ password: 'Invalid email or password' });
     } else {
       // Perform the necessary actions when authentication succeeds, such as redirecting to another page or setting an authentication token
       console.log('User authenticated');
+
     }
 
     setSubmitting(false);
@@ -37,6 +39,7 @@ const SignIn = () => {
           return errors;
         }}
         onSubmit={handleSubmit}
+       
       >
         {({ isSubmitting }) => (
           <Form>

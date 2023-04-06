@@ -1,7 +1,10 @@
 import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import './Signup.css';
+
+
 const SignupForm = () => (
+
   <div>
     <h1>Signup</h1>
     <Formik
@@ -47,15 +50,24 @@ const SignupForm = () => (
       
         return errors;
       }}
+
       
       onSubmit={(values, { setSubmitting }) => {
         setTimeout(() => {
           alert(JSON.stringify(values, null, 2));
           setSubmitting(false);
-          resetForm();
-        }, 400);
+          localStorage.setItem('signupdata', JSON.stringify(values));
+         resetForm();
+         window.location.href = '/login';  
+        },1000);
       }}
+
+
+
+      
     >
+
+      
       {({ isSubmitting }) => (
         <Form>
           <label htmlFor="fullName">Full Name:</label>
@@ -78,7 +90,7 @@ const SignupForm = () => (
           <Field type="password" name="confirmPassword" id="confirmPassword" />
           <ErrorMessage name="confirmPassword" component="div" className="error" />
 
-          <button type="submit" disabled={isSubmitting}>
+          <button  type="submit" disabled={isSubmitting}>
             Submit
           </button>
         </Form>
