@@ -13,8 +13,10 @@ const SignupForm = () => {
       setSubmitting(false);
       setSignupData(values); // Store signup data in state
       navigate('/login')
+      // navigate('/profile', { state: { signupData: values } })
       // resetForm(); // Uncomment this line if you have defined resetForm function
     }, 1000);
+    // this.props.onSignUp(user)
   };
 
   return (

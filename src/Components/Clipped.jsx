@@ -22,7 +22,7 @@ import PersonIcon from '@mui/icons-material/Person';
 import TimelineIcon from '@mui/icons-material/Timeline';
 import SettingsIcon from '@mui/icons-material/Settings';
 import { Link } from 'react-router-dom';
-
+// import PowerOffIcon from '@material-ui/icons/PowerOff'; 
 const drawerWidth = 240;
 
 const openedMixin = (theme) => ({
@@ -116,8 +116,10 @@ export default function MiniDrawer() {
           >
             <MenuIcon />
           </IconButton>
+          
           <Typography variant="h6" noWrap component="div">
-            UCU - GDSC
+            UCU - GDSC      
+
           </Typography>
         </Toolbar>
       </AppBar>
@@ -147,6 +149,16 @@ export default function MiniDrawer() {
             </ListItemIcon>
             <ListItemText primary="Management" />
           </ListItem>
+
+          <ListItem button component={Link} to="/">
+            <ListItemIcon>
+              <InboxIcon />
+            </ListItemIcon>
+            <ListItemText primary="Logout" />
+          </ListItem>
+
+          
+          
         </List>
       </Drawer>
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
