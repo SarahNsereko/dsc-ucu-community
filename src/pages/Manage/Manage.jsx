@@ -1,12 +1,15 @@
 import React from 'react';
 import Clipped from '../../Components/Clipped'
 
-const Profile = () => {
+const Manage= () => {
+  // Component logic here
+
   return (
+    // JSX markup here
     <div>
-<Clipped/>
+     <Clipped/>
     </div>
   );
 };
 
-export default Profile;
+export default Manage;

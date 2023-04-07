@@ -1,35 +1,33 @@
 import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
+
 import { useNavigate } from 'react-router-dom';
 
-const SignIn = () => {
-  const navigate=useNavigate()
-  return(
+const SigninForm = () => {
+  const navigate = useNavigate();
 
-  const handleSubmit = (values, { setSubmitting, setErrors }) => {
-    console.log('Submitting form')
-    const users = JSON.parse(localStorage.getItem('users')) ;
-
-    const user = users.find(u => u.email === values.email && u.password === values.password);
-console.log(user)
-    if (!user) {
-      setErrors({ password: 'Invalid email or password' });
-    } else {
-      // Perform the necessary actions when authentication succeeds, such as redirecting to another page or setting an authentication token
-      console.log('User authenticated');
-
-    }
-
-    setSubmitting(false);
+  const handleSignin = (values, { setSubmitting }) => {
+    setTimeout(() => {
+      alert(JSON.stringify(values, null, 2));
+      setSubmitting(false);
+      navigate('/dashboard')
+    }, 1000);
   };
 
   return (
     <div>
-      <h1>Sign In</h1>
+      <h1>Sign-in</h1>
       <Formik
-        initialValues={{ email: '', password: '' }}
-        validate={values => {
+        initialValues={{
+          email: '',
+          password: '',
+        }}
+        validate={(values) => {
+          // ... validation logic ...
+
           const errors = {};
+
+          // email validation
           if (!values.email) {
             errors.email = 'Required';
           } else if (
@@ -37,28 +35,32 @@ console.log(user)
           ) {
             errors.email = 'Invalid email address';
           }
+
+          // Password validation
           if (!values.password) {
             errors.password = 'Required';
           }
+
           return errors;
         }}
-        onSubmit={handleSubmit}
-       
+        onSubmit={(values, { setSubmitting }) => {
+          handleSignin(values, { setSubmitting });
+        }}
       >
         {({ isSubmitting }) => (
           <Form>
-             <label htmlFor="email">Email</label>
-            <Field type="email" name="email" />
-           
-            <ErrorMessage name="email" component="div"  className='error'/>
+            <label htmlFor="email">Email:</label>
+            <Field type="email" name="email" id="email" />
+            <ErrorMessage name="email" component="div" className="error" />
 
-            <label htmlFor="password">password</label>
-            <Field type="password" name="password" />
-           
-            <ErrorMessage name="password" component="div"  className='error'/>
+            <label htmlFor="password">Password:</label>
+            <Field type="password" name="password" id="password" />
+            <ErrorMessage name="password" component="div" className="error" />
+
             <button type="submit" disabled={isSubmitting}>
-              Sign-in
+              Signin
             </button>
+          
           </Form>
         )}
       </Formik>
@@ -66,4 +68,4 @@ console.log(user)
   );
 };
 
-export default SignIn;
+export default SigninForm;

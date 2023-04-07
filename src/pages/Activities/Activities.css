@@ -1,0 +1,29 @@
+/* Grid.css */
+
+.grid-containerb {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 3rem;
+}
+
+.grid-itemb {
+ border:1px solid blue;
+ border-radius: 15px;
+  padding: 1rem;
+  transition: transform 0.3s ease; /* Add transition property for animation */
+}
+
+.grid-itemb:hover {
+  transform: scale(1.05); 
+  background-color: ghostwhite;
+}
+
+
+@media (max-width: 768px) {
+.grid-containerb {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    flex-direction: column; /* Change flex direction to column */
+  }}

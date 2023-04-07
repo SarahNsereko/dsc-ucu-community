@@ -48,4 +48,10 @@
 
   
   
-
+  @media (max-width: 768px) {
+    .Homegrid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        flex-direction: column; /* Change flex direction to column */
+      }}

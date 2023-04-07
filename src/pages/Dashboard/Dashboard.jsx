@@ -1,12 +1,15 @@
-import React from "react";
-
-
-function Dashboard() {
+import React from 'react';
+import Clipped from '../../Components/Clipped';
+const Dashboard= () => {
+  // Your code here
   return (
     <div>
-    This is a dashboard
+      <Clipped/>
+
+   
+    
     </div>
   );
-}
+};
 
 export default Dashboard;
