@@ -2,16 +2,24 @@ import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 
 import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 
 const SigninForm = () => {
+  const [members, setMembers] = useState(JSON.parse(localStorage.getItem('members')) || [])
   const navigate = useNavigate();
 
   const handleSignin = (values, { setSubmitting }) => {
-    setTimeout(() => {
-      alert(JSON.stringify(values, null, 2));
-      setSubmitting(false);
-      navigate('/dashboard');
-    }, 1000);
+      const login = members.filter((member) => 
+        member.email == values.email && member.password == values.password
+      )
+      console.log(login);
+      if (login.length == 1) {
+        alert('Successfully signed in')
+        setSubmitting(false);
+        navigate('/dashboard');
+      } else {
+        alert("Please enter the correct credentials or sign up")
+      }
   };
 
   return (
