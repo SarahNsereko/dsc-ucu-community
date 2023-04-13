@@ -3,10 +3,10 @@ import Clipped from '../../Components/Clipped';
 import './Activities.css';
 
 const Activities= () => {
-  // Component logic here
+ 
 
   return (
-    // JSX markup here
+   
     <div>
      <Clipped/>
      <h1>Activities</h1>

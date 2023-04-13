@@ -1,26 +1,29 @@
 import React from 'react';
 import Clipped from '../../Components/Clipped'
-
+import './Profile.css';
  
 const Profile = () => {
 
+  const userData = JSON.parse(localStorage.getItem('UserData'))
+  console.log(userData);
   return (
     <div>
 <Clipped/>
-<h1 style={styles.welcomeText}>Welcome</h1>
+<div className='profiletab'>
+<h1 >Your Profile</h1>
+<div class="parent-container">
+  <div class="round-image"></div>
+</div>
+
+ <p><b>Name:</b> {userData.fullName}</p>
+ <p><b>Email:</b> {userData.email}</p>
+ <p><b>Phone:</b> {userData.phone}</p>
+ </div>
     </div>
   );
 };
 
-const styles = {
-  welcomeText: {
-    fontFamily: ' cursive', // Replace 'YourCustomFont' with the name of the custom font you want to use
-    fontSize: '48px',
-    fontWeight: 'bold',
-    textAlign: 'center',
-    textTransform: 'uppercase',
-    textShadow: '2px 2px #000000',
-  },
-};
+
+
 
 export default Profile;

@@ -12,7 +12,8 @@ const Dashboard= () => {
     <div>
       <Clipped/>
       {/* <User/> */}
-    <h1 style={{ fontFamily: 'cursive' }}>Welcome {userData.fullName}</h1>   
+    <h1 style={{ fontFamily: 'cursive' }}>Welcome {userData.fullName}</h1> 
+      
     </div>
   );
 };
