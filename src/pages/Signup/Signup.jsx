@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import './Signup.css';
 import { useNavigate } from 'react-router-dom';
@@ -6,21 +6,35 @@ import { useNavigate } from 'react-router-dom';
 const SignupForm = () => {
   const navigate = useNavigate();
   const [signupData, setSignupData] = useState(null);
-
+  const [members, setMembers] = useState([])
+  
+  useEffect(() => {
+    const memberList = JSON.parse(localStorage.getItem('members'))
+    if (memberList){
+      setMembers(memberList)
+    }
+  }, [])
+  
   const handleSignup = (values, { setSubmitting }) => {
-    setTimeout(() => {
-      alert(JSON.stringify(values, null, 2));
+    console.log(values);
       setSubmitting(false);
       setSignupData(values); // Store signup data in state
+      const newMemberList = [
+        ...members,
+        values
+      ]
+      console.log(newMemberList);
+      setMembers(newMemberList)
+      localStorage.setItem('members', JSON.stringify(newMemberList))
       navigate('/login')
       // navigate('/profile', { state: { signupData: values } })
       // resetForm(); // Uncomment this line if you have defined resetForm function
-    }, 1000);
-    // this.props.onSignUp(user)
-  };
+      // this.props.onSignUp(user)
+    };
 
-  return (
-    <div>
+    
+    return (
+      <div>
       <h1>Signup</h1>
       <Formik
         initialValues={{

@@ -9,10 +9,7 @@ const Dashboard= () => {
     <div>
       <Clipped/>
       {/* <User/> */}
-<h1 style={{ fontFamily: 'cursive' }}>Welcome</h1>
-{/* <img src={imageSrc} alt="Example Image"  style={{ width: '100%', height: 'auto' ,objectfit: 'cover'}} /> */}
-   
-    
+    <h1 style={{ fontFamily: 'cursive' }}>Welcome</h1>   
     </div>
   );
 };
