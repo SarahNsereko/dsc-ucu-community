@@ -14,6 +14,7 @@ const SigninForm = () => {
       )
       console.log(login);
       if (login.length == 1) {
+        localStorage.setItem('UserData', JSON.stringify(login[0]))
         alert('Successfully signed in')
         setSubmitting(false);
         navigate('/dashboard');
