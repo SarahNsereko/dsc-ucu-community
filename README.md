@@ -1,2 +1,2 @@
 # dsc-ucu-community
-https://glistening-elf-24fd53.netlify.app/
+https://ucugdsca96409.netlify.app/
