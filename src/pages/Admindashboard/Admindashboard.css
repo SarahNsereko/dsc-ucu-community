@@ -1,0 +1,11 @@
+.adminhome{
+    border:1px solid blue;
+    border-radius: 15px;
+     padding: 1rem;
+     background-color: ghostwhite;
+     transition: transform 0.3s ease; /* Add transition property for animation */
+   }
+.adminhome:hover {
+     transform: scale(1.05); 
+    
+   }

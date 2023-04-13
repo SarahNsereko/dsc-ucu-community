@@ -7,6 +7,7 @@ import Profile from './pages/Profile/Profile'
 import Activities from './pages/Activities/Activities'
 import Manage from './pages/Manage/Manage'
 import Logout from './pages/Logout/Logout'
+import Admindashboard from './pages/Admindashboard/Admindashboard'
 import './App.css'
 import { BrowserRouter as Router, Route,Routes } from 'react-router-dom';
 
@@ -24,6 +25,7 @@ function App() {
         <Route path='/activities' element={<Activities/>} />
         <Route path='/manage' element={<Manage/>} />
         <Route path='/logout' element={<Logout/>} />
+        <Route path='/admindashboard' element={<Admindashboard/>} />
     </Routes>
   </Router>
   )
