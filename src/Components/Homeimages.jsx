@@ -4,23 +4,25 @@ import Box from '@mui/material/Box';
 import ButtonBase from '@mui/material/ButtonBase';
 import Typography from '@mui/material/Typography';
 import { Link } from 'react-router-dom';
-
+import student2 from '../img/student2.jpg'
+import picture2 from "../img/pexels-nataliya-vaitkevich-7235893.jpg";
+import picture3 from '../img/volunteer.jpg'
 
 const images = [
   {
-    url: 'src/img/student2.jpg',
+    url: student2,
     title: 'Our students',
     width: '40%',
     to: 'https://developers.google.com/community/gdsc/stories',
   },
   {
-    url: 'src/img/pexels-nataliya-vaitkevich-7235893.jpg',
+    url: picture2,
     title: 'Oppurtunities',
     width: '30%',
     to:"https://careers.google.com/",
   },
   {
-    url: 'src/img/volunteer.jpg',
+    url: picture3,
     title: ' Community Impact',
     width: '30%',
     to:"https://blog.google/outreach-initiatives/sustainability/extreme-heat-support/ ",
