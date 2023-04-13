@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 
 const images = [
   {
-    url: '/src/img/student2.jpg',
+    url: 'src/img/student2.jpg',
     title: 'Our students',
     width: '40%',
     to: 'https://developers.google.com/community/gdsc/stories',
@@ -20,7 +20,7 @@ const images = [
     to:"https://careers.google.com/",
   },
   {
-    url: '/src/img/volunteer.jpg',
+    url: 'src/img/volunteer.jpg',
     title: ' Community Impact',
     width: '30%',
     to:"https://blog.google/outreach-initiatives/sustainability/extreme-heat-support/ ",
